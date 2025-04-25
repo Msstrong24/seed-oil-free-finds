@@ -10,8 +10,8 @@ export interface Category {
 export const categories: Category[] = [
   {
     id: "1",
-    name: "Chips & Crackers",
-    description: "Crunchy snacks free from seed oils",
+    name: "Chips",
+    description: "Chips free from seed oils",
     image: "/images/chips.jpg",
     slug: "chips-crackers"
   },
