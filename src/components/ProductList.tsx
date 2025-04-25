@@ -1,13 +1,14 @@
 
 import { useEffect, useState } from "react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface Product {
   name: string;
   brand: string;
   ingredients: string;
   url: string;
-  status: string;
   category: string;
+  image: string;
 }
 
 export default function ProductList() {
@@ -24,6 +25,15 @@ export default function ProductList() {
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
       {products.map((product, index) => (
         <div key={index} className="border p-4 rounded-lg shadow hover:shadow-md transition">
+          <div className="mb-4 overflow-hidden rounded-md">
+            <AspectRatio ratio={4/3}>
+              <img
+                src={product.image}
+                alt={product.name}
+                className="object-cover w-full h-full"
+              />
+            </AspectRatio>
+          </div>
           <h2 className="text-xl font-bold mb-2">{product.name}</h2>
           <p className="text-gray-600 mb-1">Brand: {product.brand}</p>
           <p className="text-gray-500 text-sm">{product.ingredients}</p>

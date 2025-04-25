@@ -1,14 +1,15 @@
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface Product {
   name: string;
   brand: string;
   ingredients: string;
   url: string;
-  status: string;
   category: string;
+  image: string;
 }
 
 export default function CategoryPage() {
@@ -16,13 +17,9 @@ export default function CategoryPage() {
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    // Load products from the JSON file
     fetch("/final_chips_products_downloadable.json")
       .then((response) => response.json())
       .then((data) => {
-        // Filter products based on category if needed
-        // For now, we're showing all products from the JSON file
-        // This can be enhanced later to filter by specific categories
         setFilteredProducts(data);
       })
       .catch((error) => console.error("Error loading products:", error));
@@ -37,6 +34,15 @@ export default function CategoryPage() {
             key={index}
             className="border p-4 rounded-lg shadow hover:shadow-md transition"
           >
+            <div className="mb-4 overflow-hidden rounded-md">
+              <AspectRatio ratio={4/3}>
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="object-cover w-full h-full"
+                />
+              </AspectRatio>
+            </div>
             <h2 className="text-xl font-bold mb-2">{product.name}</h2>
             <p className="text-gray-600 mb-1">Brand: {product.brand}</p>
             <p className="text-gray-500 text-sm">{product.ingredients}</p>
