@@ -1,71 +1,74 @@
 
-import { useParams, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { getCategoryBySlug } from "@/data/products";
-import { getProductsByCategory } from "@/data/products";
-import { categories } from "@/data/categories";
-import ProductCard from "@/components/ProductCard";
-import { ChevronRight } from "lucide-react";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import ProductList from "../components/ProductList";
 
-const CategoryPage = () => {
-  const { slug } = useParams<{ slug: string }>();
-  const [category, setCategory] = useState<any | null>(null);
-  const [products, setProducts] = useState<any[]>([]);
-  
+interface Product {
+  name: string;
+  brand: string;
+  ingredients: string;
+  url: string;
+  status: string;
+  category: string;
+}
+
+export default function CategoryPage() {
+  const { slug } = useParams(); // gets the category slug from URL
+  const [products, setProducts] = useState<Product[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+
   useEffect(() => {
-    if (slug) {
-      const foundCategory = getCategoryBySlug(slug, categories);
-      if (foundCategory) {
-        setCategory(foundCategory);
-        const categoryProducts = getProductsByCategory(foundCategory.id);
-        setProducts(categoryProducts);
-      }
+    fetch("/final_chips_products_downloadable.json")
+      .then((res) => res.json())
+      .then((data: Product[]) => {
+        setProducts(data);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (products.length > 0 && slug) {
+      const filtered = products.filter(
+        (product) => product.category.toLowerCase() === slug.toLowerCase()
+      );
+      setFilteredProducts(filtered);
     }
-  }, [slug]);
-  
-  if (!category) {
-    return <div className="container mx-auto px-4 py-8">Category not found</div>;
-  }
-  
+  }, [products, slug]);
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <nav className="flex mb-8" aria-label="Breadcrumb">
-        <ol className="inline-flex items-center space-x-1 md:space-x-3">
-          <li className="inline-flex items-center">
-            <Link to="/" className="text-sm text-muted-foreground hover:text-primary">
-              Home
-            </Link>
-          </li>
-          <li>
-            <div className="flex items-center">
-              <ChevronRight className="w-4 h-4 text-muted-foreground" />
-              <span className="ml-1 text-sm font-medium">{category.name}</span>
+    <div className="p-6">
+      <h1 className="text-3xl font-bold mb-6 capitalize">{slug}</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {filteredProducts.map((product, index) => (
+          <div
+            key={index}
+            className="border p-4 rounded-lg shadow hover:shadow-md transition"
+          >
+            <h2 className="text-xl font-bold mb-2">{product.name}</h2>
+            <p className="text-gray-600 mb-1">Brand: {product.brand}</p>
+            <p className="text-gray-500 text-sm">{product.ingredients}</p>
+            <a
+              href={product.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-2 text-blue-600 hover:underline"
+            >
+              View Product
+            </a>
+            <div className="mt-2">
+              {product.status === "confirmed_clean" ? (
+                <span className="inline-block bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded">
+                  Confirmed Clean
+                </span>
+              ) : (
+                <span className="inline-block bg-yellow-200 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">
+                  Needs Review
+                </span>
+              )}
             </div>
-          </li>
-        </ol>
-      </nav>
-      
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">{category.name}</h1>
-        <p className="text-muted-foreground">{category.description}</p>
+          </div>
+        ))}
       </div>
-      
-      {products.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 animate-fade-in">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} categorySlug={slug || ''} />
-          ))}
-        </div>
-      ) : (
-        <div className="text-center py-12 bg-muted rounded-lg">
-          <h3 className="text-lg font-semibold mb-2">No products found</h3>
-          <p className="text-muted-foreground mb-6">
-            We haven't added products to this category yet. Check back soon!
-          </p>
-        </div>
-      )}
     </div>
   );
-};
+}
 
-export default CategoryPage;
