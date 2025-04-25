@@ -1,66 +1,58 @@
 [
   {
-    "name":"Churro Strips",
-    "brand":"Siete",
-    "ingredients":"Cassava flour, avocado oil, coconut sugar, agave syrup, cinnamon, sea salt",
-    "url":"https:\/\/world.openfoodfacts.org\/product\/0851764005373",
-    "status":"confirmed_clean",
-    "category":"Chips"
+    "name": "Churro Strips",
+    "brand": "Siete",
+    "ingredients": "Cassava flour, avocado oil, coconut sugar, agave syrup, cinnamon, sea salt",
+    "url": "https://www.amazon.com/Siete-Grain-Cinnamon-Churro-Strips/dp/B08KVJW5W9/ref=sr_1_1_mod_primary_new?crid=2BJQIRJDWC1EH&dib=eyJ2IjoiMSJ9.TQFT9N1OPMZKz-IyI016mA7Lu8P2E7RsVFkrIv0c6953BGJOj1UBKz7GseJHbpBkVLMOLDL1F6GzTzwdM4Y1-A5KhZ2lHkG4CqdI260Ky_svyYu22ECXDa6BquYjJjV6KSdC1i6XW_fYK09HWa51nBWVP8TF8gjk-Xo9eR8vmm5bcw3mcx5LSGqr1BJXhV3vt_DexDdmu_pJMYSueLEpryu58aLVZBx06Wnu88X4Llrx8PrqZSkW_aw9AJHbVQHLSe47tSuQImPHtq7KRx5IRjU9J7HagyrkPxp3wBCDE4Y.QApglGOgSljp4hxxcl_f24lboo9mrh2VHQUFIv5EAVY&dib_tag=se&keywords=siete%2Bchurro%2Bstrips&qid=1745622371&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=siete%2Bchurro%2B%2Caps%2C187&sr=8-1&th=1",
+    "image": "https://a.media-amazon.com/images/I/711paxRpBSL._AC_UL320_.jpg",
+    "category": "Chips"
   },
   {
-    "name":"Sweet Potato Chips",
-    "brand":"Terra",
-    "ingredients":"Sweet potatoes, expeller pressed canola oil and\/or safflower oil and\/or sunflower oil",
-    "url":"https:\/\/world.openfoodfacts.org\/product\/728229015407",
-    "status":"needs_review",
-    "category":"Chips"
+    "name": "Sweet Potato Chips",
+    "brand": "Terra",
+    "ingredients": "Sweet potatoes, expeller pressed canola oil and/or safflower oil and/or sunflower oil",
+    "url": "https://www.amazon.com/TERRA-Sweet-Potato-Chips-Salt/dp/B012W377OE/ref=sr_1_1_f3_0o_lucky_mod_primary_alm?crid=3B1RVMUSYZYDW&dib=eyJ2IjoiMSJ9.DULH98Yeq9gaOR-nAfWFWr1En2fJ6W1KJoG0nXmFCgqkTMYMqm4XMtTgYH7KPcjPZ78hvunNZccmQuXqK6sCLm2M-_z0kncQYYLuwY2cBf0l7Z8uM2GZw3evdDx2jZ3G9vnG-Ljtbp_-CBP9MT66xrKntl8HSxKVCFrW1C2WtllD3nYJQObaz0MocHGYJVA4Jt0Z6srdAx3-8tjuuwqVMOI9jncHcwKCqP1_oScXNS4Ra1qW7c0UXqk7o90IMPeJJuRd8RDnZE42x2z9o-eV_MFsAoEJD1Yi0PoSSQ5K0tw.AAh5bwQjJoe2p6w_L_2Cvnp7CfA9JJD3sKXtRgC0y2M&dib_tag=se&keywords=terra%2Bsweet%2Bpotato%2Bchips&qid=1745622775&sbo=m6DjfpMzMLDmL8pSMKX8hw%3D%3D&sprefix=terra%2Bsweet%2Bpotato%2Bchips%2Caps%2C184&sr=8-1&th=1",
+    "image": "https://a.media-amazon.com/images/I/617MuX8s6VL._AC_UL320_.jpg",
+    "category": "Chips"
   },
   {
-    "name":"Cassava Chips",
-    "brand":"Late July",
-    "ingredients":"Cassava flour, organic avocado oil, sea salt",
-    "url":"https:\/\/world.openfoodfacts.org\/product\/8999990033420",
-    "status":"confirmed_clean",
-    "category":"Chips"
+    "name": "Plantain Chips",
+    "brand": "Barnana",
+    "ingredients": "Organic plantains, organic coconut oil, Himalayan pink salt",
+    "url": "https://www.amazon.com/Barnana-Organic-Plantain-Chips-Himalayan/dp/B08SNV81XD/ref=sr_1_1?crid=1JEXVYS0NL1R5&dib=eyJ2IjoiMSJ9.o9dKcBOFEUf4fKa8Hbhc9r6Usq1E8IpoZaVASHVh8_KoAqCb4Ljnlm8ofe6DUO1gNXdNCNLxGE_UJcLC0KZmOVSqHrWdXqZ4uxgY7T213aPsORpVB56BQb4WuIDIIrbapChJFVtVp7dYd6f2ExY41uS3Zn50tF8cteQJz3g4qNtzF4KOPs35vNqYT0NYLsuiJ3WFZntL24um00w2vIiiqJSLbWfdfpAH8FzhTwFWXxa-u5LxJ_C0KhGNC7GMTBc2KuLuc6kqUJkoisYHeZW_Aj9nj0CJZoQqIvue8R-GoFo.Nm0gN6xJJZ7I8wKuGTlKiKMs2oX-WVdGQzgf81JVW0U&dib_tag=se&keywords=barnana%2Bplantain%2Bchips&qid=1745622942&sprefix=barnana%2B%2Caps%2C205&sr=8-1&th=1",
+    "image": "https://a.media-amazon.com/images/I/81rIoo6T+oL._AC_UL320_.jpg",
+    "category": "Chips"
   },
   {
-    "name":"Plantain Chips",
-    "brand":"Barnana",
-    "ingredients":"Organic plantains, organic coconut oil, Himalayan pink salt",
-    "url":"https:\/\/world.openfoodfacts.org\/product\/857682003264",
-    "status":"confirmed_clean",
-    "category":"Chips"
+    "name": "Organic White Corn Chips",
+    "brand": "Whole Foods",
+    "ingredients": "Organic white corn, organic expeller pressed sunflower oil and/or safflower oil and/or canola oil, sea salt",
+    "url": "https://www.amazon.com/365-Everyday-Value-Organic-Tortilla/dp/B074H57S9Z/ref=sr_1_6_f3_0o_fs?crid=26VVVNNEWT7QK&dib=eyJ2IjoiMSJ9.sfD6l5ssfYSRj6USOnBmsIb8tip3NP8LITeB_q7pAcOl-q84bjnRbYtf2JgfI-XP-DgzTSo1gA5CPUWeLhpN7QHRRWRKDJ_tguLwHtu0UjKqtAU0llRG2ytMouVy4Ko-bZ-qH-GEIGFi8pFvrNJx8OzBGhQKtxsnqSJGE7oB-FepOYk-zPNEai7lUWtJIjFFOYEpJaUeUAcIle22FNVC9_64A5cGJyB_32DoFeZeyunMD1ZcdTkyjJHYA7ehsKl5WXWEvwBdOLtnHNtD6NZ5D_1HgVbTOYLos_iiNdBEcSo.8134Q89MMPM4OMyUH4QxB8nNAcWm726qcGeH0Mjg5SY&dib_tag=se&keywords=whole%2Bfoods%2Borganic%2Bwhite%2Bcorn%2Bchips&qid=1745623032&sprefix=whole%2Bfoods%2Borganic%2Bwhite%2Bcorn%2Bchip%2Caps%2C176&sr=8-6&th=1",
+    "image": "https://a.media-amazon.com/images/I/71D2au2qjPL._AC_UL320_.jpg",
+    "category": "Chips"
   },
   {
-    "name":"Organic White Corn Chips",
-    "brand":"Whole Foods",
-    "ingredients":"Organic white corn, organic expeller pressed sunflower oil and\/or safflower oil and\/or canola oil, sea salt",
-    "url":"https:\/\/world.openfoodfacts.org\/product\/099482456012",
-    "status":"needs_review",
-    "category":"Chips"
+    "name": "Sweet Potato Chips",
+    "brand": "Jackson's Honest",
+    "ingredients": "Sweet potatoes, coconut oil, sea salt",
+    "url": "https://www.amazon.com/Jacksons-Potato-Kettle-Premium-Avocado/dp/B0BVGWCMCD/ref=sr_1_1_sspa?crid=HPLD9N9RUB4D&dib=eyJ2IjoiMSJ9.kV20vmg_-qSZ0X9LEquzeshYEYXOZjnjVK0ef537vmsLr9gV3f-TBSxmlxEKKzgVEn1Isqlqv6nYLPQw0wGzN9JFDKc3sFRNqNKytnLcDWx9r1iyOhmd0zXLToVRb9r1CEKC1dv45gJcenBZGrylxxjCij7GgnvYJu0QMxQcWLRn8C2_kgC6hPAOKRukk-0VTTRGJBgjR6pqEw47i-9iFqHIxNumTCFQk0M8g9UYoOPczDOa5x0l3ThzF9gDIe-W2jd37jTM7a8knG6aAWGxSl_O3S87aRvKdxQHHsjeefQ.YFQXCEk-N6056NrCI8JdaCaZg34bDDXmomTUCWDMDYo&dib_tag=se&keywords=jacksons%2Bhonest%2Bsweet%2Bpotato%2Bchips&qid=1745623099&rdc=1&sprefix=jacksons%2Bhonest%2B%2Caps%2C187&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1",
+    "image": "https://a.media-amazon.com/images/I/61fAAM-VzQL._AC_UL320_.jpg",
+    "category": "Chips"
   },
   {
-    "name":"Sweet Potato Chips",
-    "brand":"Jackson's Honest",
-    "ingredients":"Sweet potatoes, coconut oil, sea salt",
-    "url":"https:\/\/world.openfoodfacts.org\/product\/850562006032",
-    "status":"confirmed_clean",
-    "category":"Chips"
+    "name": "BBQ Chips",
+    "brand": "Good Health",
+    "ingredients": "Potatoes, olive oil, BBQ seasoning (sugar, tomato powder, salt, onion powder, garlic powder, paprika, spices)",
+    "url": "https://www.amazon.com/Health-Avocado-Kettle-Style-Barbecue/dp/B0756PRJQ4/ref=sr_1_1?crid=2U04MEPERUTF3&dib=eyJ2IjoiMSJ9.nk0O6ZWwZvWt1zuXYRMaBJKx85nfUr8X84sTevZlRsqWtrSnbUpEkYUxS9rb57yleGjAcPZH1IgpWh65rhP0T9Bpx6Grcm9f7eIyDx1pjF4ZH8q9y5oCxn71-JS3I3pre9zMG0Ck2qXb6fHoWAWa8ncm1MND7Nw8bI5fV--GBfOwQfkwUuBhUSy3cOp-v5NMSkFV0BtCAcm8OheUN0FID5B43WkToJSLuweMGqWZIQQl0sVSDtLQTMCxSMn7ogWODU4GgQiyLX5m-a_-MzpxcwmiHBk6nZpjOfqgGYs8tq0.OgX1Y9rgtIhVHCaG54zn8TC30OafzTHbWHeeYVaphKY&dib_tag=se&keywords=good%2Bhealth%2Bbbq%2Bchips&qid=1745623143&sprefix=good%2Bhealth%2Bbbq%2Caps%2C197&sr=8-1&th=1",
+    "image": "https://a.media-amazon.com/images/I/61ptn35FXLL._AC_UL320_.jpg",
+    "category": "Chips"
   },
   {
-    "name":"BBQ Chips",
-    "brand":"Good Health",
-    "ingredients":"Potatoes, olive oil, BBQ seasoning (sugar, tomato powder, salt, onion powder, garlic powder, paprika, spices)",
-    "url":"https:\/\/world.openfoodfacts.org\/product\/796328630007",
-    "status":"confirmed_clean",
-    "category":"Chips"
-  },
-  {
-    "name":"Potato Chips",
-    "brand":"Kettle Brand",
-    "ingredients":"Potatoes, safflower and\/or sunflower oil, sea salt",
-    "url":"https:\/\/world.openfoodfacts.org\/product\/084114900222",
-    "status":"needs_review",
-    "category":"Chips"
+    "name": "Apple Cider Vinegar",
+    "brand": "Kettle Brand",
+    "ingredients": "Potatoes, safflower and/or sunflower oil, sea salt",
+    "url": "https://www.amazon.com/KETTLE-FOODS-Apple-Vinegar-Potato/dp/B0DG48V639/ref=sr_1_5_f3_0o_wf_mod_primary_alm?crid=2PR53MY1XGD7Z&dib=eyJ2IjoiMSJ9.wE31blGzBKyyFZjhleoWYCQjIP6nMPi2-V0tMvpeiA1aiK3FgHBZVBxbSus2nGQZ_XLsz-Jhb_6SLyKFzpQbs6IxYNSwAvwIua-A9kVBTYZ-8XKoYspKeAbjk4n_P75rBWwyHWfdQcQNgP-8LPmHfWUEYbSNcmyVIIBMTDyD53MjIGcirm7amwWp8Npc4AKBA6Puwpq29povJg0UQKCUim1tElUrqLwsvASyFzD4lxo2oD35Zi2xd20OqxafuS9PZjec6SwZdhti6nLPEVX_UDhhiRLblltnrW3v2DZCwXE.f0E11C_peh2lhic3V_LRoKwR9m4N3YqVXmjfiyZ9zQU&dib_tag=se&keywords=kettle+brand+avocado+oil+chips&qid=1745623210&sbo=m6DjfpMzMLDmL8pSMKX8hw%3D%3D&sprefix=kettle+avoc%2Caps%2C212&sr=8-5",
+    "image": "https://a.media-amazon.com/images/I/713pd4zs7GL._AC_UL320_.jpg",
+    "category": "Chips"
   }
 ]
