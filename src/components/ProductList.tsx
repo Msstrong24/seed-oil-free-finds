@@ -25,14 +25,12 @@ export default function ProductList() {
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
       {products.map((product, index) => (
         <div key={index} className="border p-4 rounded-lg shadow hover:shadow-md transition">
-          <div className="mb-4 overflow-hidden rounded-md h-40">
-            <AspectRatio ratio={4/3}>
-              <img
-                src={product.image}
-                alt={product.name}
-                className="object-cover w-full h-full"
-              />
-            </AspectRatio>
+          <div className="mb-4 overflow-hidden rounded-md flex justify-center">
+            <img
+              src={product.image}
+              alt={product.name}
+              className="object-contain w-32 h-32"
+            />
           </div>
           <h2 className="text-xl font-bold mb-2">{product.name}</h2>
           <p className="text-gray-600 mb-1">Brand: {product.brand}</p>
