@@ -1,5 +1,16 @@
 import { categories } from "@/data/categories";
 import CategoryCard from "@/components/CategoryCard";
+import ProductList from "../components/ProductList";
+
+export default function Home() {
+  return (
+    <div className="p-6">
+      <h1 className="text-3xl font-bold mb-6">Chips</h1>
+      <ProductList />
+    </div>
+  );
+}
+
 
 const Home = () => {
   return (
