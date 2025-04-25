@@ -23,8 +23,6 @@ const CategoryCard = ({ category }: CategoryCardProps) => {
         <div 
           className="w-full h-full bg-center bg-cover"
           style={{ 
-            backgroundImage: `url(${category.image})`,
-            // Fallback image if the original fails to load
             backgroundImage: `url(${category.image}), url('https://images.unsplash.com/photo-1582562124811-c09040d0a901?q=80&w=500')` 
           }}
         ></div>

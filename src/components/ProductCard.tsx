@@ -24,8 +24,6 @@ const ProductCard = ({ product, categorySlug }: ProductCardProps) => {
         <div 
           className="w-full h-full bg-center bg-cover"
           style={{ 
-            backgroundImage: `url(${product.image})`,
-            // Fallback image if the original fails to load
             backgroundImage: `url(${product.image}), url('https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?q=80&w=500')` 
           }}
         ></div>
