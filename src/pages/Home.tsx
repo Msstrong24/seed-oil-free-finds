@@ -1,16 +1,11 @@
-
 import { categories } from "@/data/categories";
 import CategoryCard from "@/components/CategoryCard";
-
 const Home = () => {
-  return (
-    <div className="container mx-auto px-4 py-8">
+  return <div className="container mx-auto px-4 py-8">
       <section className="mb-12">
         <div className="bg-natural-100 rounded-lg p-8 flex flex-col items-center text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Discover Foods Without Seed Oils</h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-2xl">
-            Your complete directory for finding delicious food products made without inflammatory seed oils.
-          </p>
+          <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-2xl">Search our list to to find food products that are seed oil free. </p>
           <div className="grid grid-cols-3 gap-4 max-w-md">
             <div className="p-3 bg-white rounded-lg shadow-sm text-center">
               <div className="text-2xl font-bold text-natural-500">{categories.length}</div>
@@ -33,9 +28,7 @@ const Home = () => {
           <h2 className="text-2xl font-bold">Browse Categories</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 animate-fade-in">
-          {categories.map((category) => (
-            <CategoryCard key={category.id} category={category} />
-          ))}
+          {categories.map(category => <CategoryCard key={category.id} category={category} />)}
         </div>
       </section>
 
@@ -65,8 +58,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
