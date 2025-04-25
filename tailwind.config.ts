@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,21 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+                // Custom colors for our app
+                natural: {
+                    50: '#f5f9f0',
+                    100: '#e8f2dc',
+                    200: '#d5e9bd',
+                    300: '#b8d790',
+                    400: '#9ac669',
+                    500: '#80b049',
+                    600: '#629035',
+                    700: '#4a712a',
+                    800: '#3c5a24',
+                    900: '#334c21',
+                    950: '#1a2910',
+                },
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +99,26 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                'fade-in': {
+                    '0%': {
+                        opacity: '0',
+                        transform: 'translateY(10px)'
+                    },
+                    '100%': {
+                        opacity: '1',
+                        transform: 'translateY(0)'
+                    }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'fade-in': 'fade-in 0.5s ease-out'
+			},
+            fontFamily: {
+                sans: ['Inter', 'system-ui', 'sans-serif'],
+            },
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
