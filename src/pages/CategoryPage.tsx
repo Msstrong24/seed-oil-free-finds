@@ -1,38 +1,5 @@
 
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import ProductList from "../components/ProductList";
 
-interface Product {
-  name: string;
-  brand: string;
-  ingredients: string;
-  url: string;
-  status: string;
-  category: string;
-}
-
-export default function CategoryPage() {
-  const { slug } = useParams(); // gets the category slug from URL
-  const [products, setProducts] = useState<Product[]>([]);
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
-
-  useEffect(() => {
-    fetch("/final_chips_products_downloadable.json")
-      .then((res) => res.json())
-      .then((data: Product[]) => {
-        setProducts(data);
-      });
-  }, []);
-
-  useEffect(() => {
-    if (products.length > 0 && slug) {
-      const filtered = products.filter(
-        (product) => product.category.toLowerCase() === slug.toLowerCase()
-      );
-      setFilteredProducts(filtered);
-    }
-  }, [products, slug]);
 
   return (
     <div className="p-6">
