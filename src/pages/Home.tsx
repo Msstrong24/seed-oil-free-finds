@@ -39,7 +39,7 @@ export default function Home() {
             Discover our selection of seed oil-free chip products
           </p>
         </div>
-        <ProductList />
+
       </section>
 
       {/* Categories Section */}
