@@ -1,0 +1,66 @@
+[
+  {
+    "name":"Churro Strips",
+    "brand":"Siete",
+    "ingredients":"Cassava flour, avocado oil, coconut sugar, agave syrup, cinnamon, sea salt",
+    "url":"https:\/\/world.openfoodfacts.org\/product\/0851764005373",
+    "status":"confirmed_clean",
+    "category":"Chips"
+  },
+  {
+    "name":"Sweet Potato Chips",
+    "brand":"Terra",
+    "ingredients":"Sweet potatoes, expeller pressed canola oil and\/or safflower oil and\/or sunflower oil",
+    "url":"https:\/\/world.openfoodfacts.org\/product\/728229015407",
+    "status":"needs_review",
+    "category":"Chips"
+  },
+  {
+    "name":"Cassava Chips",
+    "brand":"Late July",
+    "ingredients":"Cassava flour, organic avocado oil, sea salt",
+    "url":"https:\/\/world.openfoodfacts.org\/product\/8999990033420",
+    "status":"confirmed_clean",
+    "category":"Chips"
+  },
+  {
+    "name":"Plantain Chips",
+    "brand":"Barnana",
+    "ingredients":"Organic plantains, organic coconut oil, Himalayan pink salt",
+    "url":"https:\/\/world.openfoodfacts.org\/product\/857682003264",
+    "status":"confirmed_clean",
+    "category":"Chips"
+  },
+  {
+    "name":"Organic White Corn Chips",
+    "brand":"Whole Foods",
+    "ingredients":"Organic white corn, organic expeller pressed sunflower oil and\/or safflower oil and\/or canola oil, sea salt",
+    "url":"https:\/\/world.openfoodfacts.org\/product\/099482456012",
+    "status":"needs_review",
+    "category":"Chips"
+  },
+  {
+    "name":"Sweet Potato Chips",
+    "brand":"Jackson's Honest",
+    "ingredients":"Sweet potatoes, coconut oil, sea salt",
+    "url":"https:\/\/world.openfoodfacts.org\/product\/850562006032",
+    "status":"confirmed_clean",
+    "category":"Chips"
+  },
+  {
+    "name":"BBQ Chips",
+    "brand":"Good Health",
+    "ingredients":"Potatoes, olive oil, BBQ seasoning (sugar, tomato powder, salt, onion powder, garlic powder, paprika, spices)",
+    "url":"https:\/\/world.openfoodfacts.org\/product\/796328630007",
+    "status":"confirmed_clean",
+    "category":"Chips"
+  },
+  {
+    "name":"Potato Chips",
+    "brand":"Kettle Brand",
+    "ingredients":"Potatoes, safflower and\/or sunflower oil, sea salt",
+    "url":"https:\/\/world.openfoodfacts.org\/product\/084114900222",
+    "status":"needs_review",
+    "category":"Chips"
+  }
+]
