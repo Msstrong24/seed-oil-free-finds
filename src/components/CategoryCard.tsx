@@ -1,6 +1,7 @@
 
 import { useNavigate } from "react-router-dom";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
+import { Chips, Salad, CookingPot, Baking } from "lucide-react";
 import { Category } from "@/data/categories";
 
 interface CategoryCardProps {
@@ -13,27 +14,30 @@ const CategoryCard = ({ category }: CategoryCardProps) => {
   const handleClick = () => {
     navigate(`/category/${category.slug}`);
   };
+
+  const getIcon = (slug: string) => {
+    switch (slug) {
+      case "chips-crackers":
+        return <Chips className="w-8 h-8 text-emerald-500" />;
+      case "salad-dressings":
+        return <Salad className="w-8 h-8 text-emerald-500" />;
+      case "cooking-oils":
+        return <CookingPot className="w-8 h-8 text-emerald-500" />;
+      case "baked-goods":
+        return <Baking className="w-8 h-8 text-emerald-500" />;
+      default:
+        return <Chips className="w-8 h-8 text-emerald-500" />;
+    }
+  };
   
   return (
     <Card 
-      className="overflow-hidden cursor-pointer card-hover"
+      className="hover:shadow-md transition-shadow cursor-pointer p-6 flex flex-col items-center text-center"
       onClick={handleClick}
     >
-      <div className="h-48 overflow-hidden bg-muted">
-        <div 
-          className="w-full h-full bg-center bg-cover"
-          style={{ 
-            backgroundImage: `url(${category.image}), url('https://images.unsplash.com/photo-1582562124811-c09040d0a901?q=80&w=500')` 
-          }}
-        ></div>
-      </div>
-      <CardContent className="p-4">
-        <h3 className="font-semibold text-lg">{category.name}</h3>
-        <p className="text-sm text-muted-foreground mt-1">{category.description}</p>
-      </CardContent>
-      <CardFooter className="p-4 pt-0 flex justify-end">
-        <span className="text-sm text-primary font-medium">View Products →</span>
-      </CardFooter>
+      {getIcon(category.slug)}
+      <h3 className="font-semibold text-xl mt-4 mb-2">{category.name}</h3>
+      <p className="text-sm text-muted-foreground">15 products</p>
     </Card>
   );
 };

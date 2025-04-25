@@ -1,7 +1,9 @@
 import { categories } from "@/data/categories";
 import CategoryCard from "@/components/CategoryCard";
+
 const Home = () => {
-  return <div className="container mx-auto px-4 py-8">
+  return (
+    <div className="container mx-auto px-4 py-8">
       <section className="mb-12">
         <div className="bg-natural-100 rounded-lg p-8 flex flex-col items-center text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Discover Foods Without Seed Oils</h1>
@@ -24,11 +26,19 @@ const Home = () => {
       </section>
 
       <section className="mb-12">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold">Browse Categories</h2>
+        <div className="text-center mb-8">
+          <div className="inline-block px-4 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-medium mb-4">
+            Categories
+          </div>
+          <h2 className="text-4xl font-bold mb-4">Browse By Food Type</h2>
+          <p className="text-xl text-muted-foreground">
+            Explore our curated categories of seed oil-free products
+          </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 animate-fade-in">
-          {categories.map(category => <CategoryCard key={category.id} category={category} />)}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-fade-in">
+          {categories.map(category => (
+            <CategoryCard key={category.id} category={category} />
+          ))}
         </div>
       </section>
 
@@ -58,6 +68,8 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </div>;
+    </div>
+  );
 };
+
 export default Home;
