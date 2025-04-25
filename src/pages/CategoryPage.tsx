@@ -1,5 +1,32 @@
 
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
+interface Product {
+  name: string;
+  brand: string;
+  ingredients: string;
+  url: string;
+  status: string;
+  category: string;
+}
+
+export default function CategoryPage() {
+  const { slug } = useParams<{ slug: string }>();
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    // Load products from the JSON file
+    fetch("/final_chips_products_downloadable.json")
+      .then((response) => response.json())
+      .then((data) => {
+        // Filter products based on category if needed
+        // For now, we're showing all products from the JSON file
+        // This can be enhanced later to filter by specific categories
+        setFilteredProducts(data);
+      })
+      .catch((error) => console.error("Error loading products:", error));
+  }, [slug]);
 
   return (
     <div className="p-6">
@@ -38,4 +65,3 @@
     </div>
   );
 }
-

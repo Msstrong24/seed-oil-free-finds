@@ -1,7 +1,6 @@
 
 import { categories } from "@/data/categories";
 import CategoryCard from "@/components/CategoryCard";
-import ProductList from "../components/ProductList";
 
 export default function Home() {
   return (
@@ -26,20 +25,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* ProductList Section */}
-      <section className="mb-12">
-        <div className="text-center mb-8">
-          <div className="inline-block px-4 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-medium mb-4">
-            Products
-          </div>
-          <h2 className="text-4xl font-bold mb-4">Chips</h2>
-          <p className="text-xl text-muted-foreground">
-            Discover our selection of seed oil-free chip products
-          </p>
-        </div>
-
       </section>
 
       {/* Categories Section */}
