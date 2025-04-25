@@ -34,7 +34,7 @@ export default function CategoryPage() {
             key={index}
             className="border p-4 rounded-lg shadow hover:shadow-md transition"
           >
-            <div className="mb-4 overflow-hidden rounded-md">
+            <div className="mb-4 overflow-hidden rounded-md h-40">
               <AspectRatio ratio={4/3}>
                 <img
                   src={product.image}
