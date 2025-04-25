@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 
 interface Product {
@@ -34,20 +35,8 @@ export default function ProductList() {
           >
             View Product
           </a>
-          <div className="mt-2">
-            {product.status === "confirmed_clean" ? (
-              <span className="inline-block bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded">
-                Confirmed Clean
-              </span>
-            ) : (
-              <span className="inline-block bg-yellow-200 text-yellow-800 text-xs font-semibold px-2 py-1 rounded">
-                Needs Review
-              </span>
-            )}
-          </div>
         </div>
       ))}
     </div>
   );
 }
-
