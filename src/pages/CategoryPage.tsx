@@ -1,6 +1,6 @@
-
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { categories, getCategoryBySlug } from '@/data/categories';
 
 interface Product {
   name: string;
@@ -14,6 +14,7 @@ interface Product {
 export default function CategoryPage() {
   const { slug } = useParams<{ slug: string }>();
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+  const [categoryName, setCategoryName] = useState<string>(slug || 'Category');
 
   useEffect(() => {
     fetch("/final_chips_products_downloadable.json")
@@ -22,11 +23,18 @@ export default function CategoryPage() {
         setFilteredProducts(data);
       })
       .catch((error) => console.error("Error loading products:", error));
+
+    if (slug) {
+      const category = getCategoryBySlug(slug, categories);
+      if (category) {
+        setCategoryName(category.name);
+      }
+    }
   }, [slug]);
 
   return (
     <div className="p-6">
-      <h1 className="text-3xl font-bold mb-6 capitalize">{slug}</h1>
+      <h1 className="text-3xl font-bold mb-6">{categoryName}</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {filteredProducts.map((product, index) => (
           <div
