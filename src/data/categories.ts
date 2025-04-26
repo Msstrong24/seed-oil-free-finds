@@ -51,3 +51,7 @@ export const categories: Category[] = [
     slug: "nut-butters"
   }
 ];
+
+export function getCategoryBySlug(slug: string, categoriesData: Category[] = categories): Category | undefined {
+  return categoriesData.find(category => category.slug === slug);
+}
