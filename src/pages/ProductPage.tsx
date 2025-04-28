@@ -100,16 +100,18 @@ const ProductPage = () => {
       </nav>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in">
-        <div>
-          <div 
-            className="rounded-lg overflow-hidden bg-muted h-96 bg-center bg-cover flex items-center justify-center"
-            style={{ 
-              backgroundImage: product.image ? `url(${product.image})` : undefined,
-              backgroundColor: !product.image ? '#f3f4f6' : undefined
-            }}
-          >
-            {!product.image && <span className="text-gray-400">No image available</span>}
-          </div>
+        <div className="flex items-center justify-center">
+          {product.image ? (
+            <img 
+              src={product.image} 
+              alt={product.name}
+              className="object-contain h-80 w-full rounded-lg"
+            />
+          ) : (
+            <div className="rounded-lg overflow-hidden bg-muted h-80 w-full flex items-center justify-center">
+              <span className="text-gray-400">No image available</span>
+            </div>
+          )}
         </div>
         
         <div>
