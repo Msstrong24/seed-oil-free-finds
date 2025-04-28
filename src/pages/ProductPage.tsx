@@ -1,31 +1,70 @@
 
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getProductBySlug, getCategoryBySlug } from "@/data/products";
+import { getCategoryBySlug } from "@/data/categories";
 import { categories } from "@/data/categories";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, ExternalLink } from "lucide-react";
 
+interface Product {
+  name: string;
+  brand: string;
+  ingredients: string;
+  url: string;
+  category: string;
+  image: string;
+  slug?: string;
+}
+
 const ProductPage = () => {
   const { categorySlug, productSlug } = useParams<{ categorySlug: string, productSlug: string }>();
-  const [product, setProduct] = useState<any | null>(null);
+  const [product, setProduct] = useState<Product | null>(null);
   const [category, setCategory] = useState<any | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  
+  // Helper function to create a slug from brand and product name (same as in CategoryPage)
+  const createProductSlug = (brand: string, name: string): string => {
+    const combinedString = `${brand}-${name}`;
+    return combinedString
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '') // Remove special characters
+      .replace(/\s+/g, '-') // Replace spaces with hyphens
+      .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
+      .trim();
+  };
   
   useEffect(() => {
-    if (productSlug) {
-      const foundProduct = getProductBySlug(productSlug);
-      if (foundProduct) {
-        setProduct(foundProduct);
-        
-        if (categorySlug) {
-          const foundCategory = getCategoryBySlug(categorySlug, categories);
-          if (foundCategory) {
-            setCategory(foundCategory);
-          }
-        }
+    if (categorySlug) {
+      // Find the category first
+      const foundCategory = getCategoryBySlug(categorySlug, categories);
+      if (foundCategory) {
+        setCategory(foundCategory);
       }
+      
+      // Fetch products and find the matching one by slug
+      fetch("/final_chips_products_downloadable.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const matchingProduct = data.find((p: Product) => {
+            const slug = createProductSlug(p.brand, p.name);
+            return slug === productSlug;
+          });
+          
+          if (matchingProduct) {
+            setProduct(matchingProduct);
+          }
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error loading products:", error);
+          setLoading(false);
+        });
     }
-  }, [productSlug, categorySlug]);
+  }, [categorySlug, productSlug]);
+  
+  if (loading) {
+    return <div className="container mx-auto px-4 py-8">Loading product details...</div>;
+  }
   
   if (!product || !category) {
     return <div className="container mx-auto px-4 py-8">Product not found</div>;
@@ -63,11 +102,14 @@ const ProductPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in">
         <div>
           <div 
-            className="rounded-lg overflow-hidden bg-muted h-96 bg-center bg-cover"
+            className="rounded-lg overflow-hidden bg-muted h-96 bg-center bg-cover flex items-center justify-center"
             style={{ 
-              backgroundImage: `url(${product.image}), url('https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?q=80&w=500')`
+              backgroundImage: product.image ? `url(${product.image})` : undefined,
+              backgroundColor: !product.image ? '#f3f4f6' : undefined
             }}
-          ></div>
+          >
+            {!product.image && <span className="text-gray-400">No image available</span>}
+          </div>
         </div>
         
         <div>
@@ -75,7 +117,7 @@ const ProductPage = () => {
           <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
           
           <div className="mb-6">
-            <p className="text-lg">{product.description}</p>
+            <p className="text-lg">{product.category}</p>
           </div>
           
           <div className="mb-6">
@@ -85,32 +127,14 @@ const ProductPage = () => {
           
           <div className="mb-6">
             <h2 className="text-xl font-semibold mb-2">Where to Buy</h2>
-            <div className="flex flex-wrap gap-2">
-              {product.purchaseLinks.map((link: any, index: number) => (
-                <a 
-                  key={index}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 px-4 py-2 bg-secondary rounded-full text-sm hover:bg-secondary/80"
-                >
-                  {link.name}
-                  <ExternalLink className="h-3.5 w-3.5" />
-                </a>
-              ))}
-            </div>
-          </div>
-          
-          <div>
-            <h2 className="text-xl font-semibold mb-2">Official Website</h2>
             <a
-              href={product.website}
+              href={product.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary hover:underline"
+              className="inline-flex items-center gap-1 px-4 py-2 bg-secondary rounded-full text-sm hover:bg-secondary/80"
             >
-              Visit {product.brand} Website
-              <ExternalLink className="h-4 w-4" />
+              View on Amazon
+              <ExternalLink className="h-3.5 w-3.5" />
             </a>
           </div>
         </div>
