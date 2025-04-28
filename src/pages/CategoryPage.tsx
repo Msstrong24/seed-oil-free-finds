@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { categories, getCategoryBySlug } from '@/data/categories';
 import { Card } from "@/components/ui/card";
 
@@ -18,7 +18,6 @@ export default function CategoryPage() {
   const { slug } = useParams<{ slug: string }>();
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [categoryName, setCategoryName] = useState<string>(slug || 'Category');
-  const navigate = useNavigate();
 
   // Helper function to create a slug from brand and product name
   const createProductSlug = (brand: string, name: string): string => {
@@ -52,33 +51,31 @@ export default function CategoryPage() {
     }
   }, [slug]);
 
-  const handleProductClick = (productSlug: string) => {
-    if (slug) {
-      navigate(`/category/${slug}/product/${productSlug}`);
-    }
-  };
-
   return (
     <div className="p-6">
       <h1 className="text-3xl font-bold mb-6">{categoryName}</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {filteredProducts.map((product, index) => (
-          <Card
-            key={index}
-            className="border p-4 rounded-lg shadow hover:shadow-md transition cursor-pointer"
-            onClick={() => handleProductClick(product.slug || '')}
+          <Link 
+            key={index} 
+            to={`/category/${slug}/product/${product.slug || ''}`}
+            className="block"
           >
-            <div className="mb-4 overflow-hidden rounded-md flex justify-center">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="object-contain w-32 h-32"
-              />
-            </div>
-            <h2 className="text-xl font-bold mb-2">{product.name}</h2>
-            <p className="text-gray-600 mb-1">Brand: {product.brand}</p>
-            <p className="text-gray-500 text-sm line-clamp-2">{product.ingredients}</p>
-          </Card>
+            <Card
+              className="border p-4 rounded-lg shadow hover:shadow-md transition cursor-pointer"
+            >
+              <div className="mb-4 overflow-hidden rounded-md flex justify-center">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="object-contain w-32 h-32"
+                />
+              </div>
+              <h2 className="text-xl font-bold mb-2">{product.name}</h2>
+              <p className="text-gray-600 mb-1">Brand: {product.brand}</p>
+              <p className="text-gray-500 text-sm line-clamp-2">{product.ingredients}</p>
+            </Card>
+          </Link>
         ))}
       </div>
     </div>
